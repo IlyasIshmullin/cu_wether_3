@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Погодный сервис</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='form.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Введите маршрут</h1>
+        <form action="/" method="POST">
+            <!-- Начальная точка -->
+            <div class="form-section">
+                <h2>Начальная точка</h2>
+                <label for="start_city">Город:</label>
+                <input type="text" name="start_city" id="start_city" required>
+            </div>
+
+            <!-- Промежуточные точки -->
+            <div class="form-section">
+                <h2>Промежуточные точки</h2>
+                <div id="intermediate-points-container"></div>
+                <button class="add" type="button" onclick="addIntermediatePoint()">Добавить промежуточную точку</button>
+                <input type="hidden" name="num_intermediate_points" id="num_intermediate_points" value="0">
+            </div>
+
+            <!-- Конечная точка -->
+            <div class="form-section">
+                <h2>Конечная точка</h2>
+                <label for="end_city">Город:</label>
+                <input type="text" name="end_city" id="end_city" required>
+            </div>
+
+            <!-- Поле для выбора количества дней -->
+            <div class="form-section">
+                <h2>Количество дней для прогноза</h2>
+                <label for="forecast_days">Введите количество дней:</label>
+                <input type="number" name="forecast_days" id="forecast_days" min="1" max="14" value="7">
+            </div>
+
+            <!-- Кнопка отправки -->
+            <input class="submit" type="submit" value="Проверить погоду">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* Основные стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #1c92d2, #f2fcfe);
+    background-attachment: fixed;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Контейнер */
+.container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 50px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Заголовки */
+h1, h2 {
+    text-align: center;
+    color: #444;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Кнопки */
+button {
+    display: inline-block;
+    background: linear-gradient(to right, #56ab2f, #a8e063);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    margin: 10px auto;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: linear-gradient(to right, #3c9a3a, #79c770);
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Поля ввода */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #56ab2f;
+    outline: none;
+    box-shadow: 0 0 5px rgba(86, 171, 47, 0.5);
+}
+
+/* Кнопка отправки */
+input[type="submit"] {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #1b2a55, #223d78);
+    transform: translateY(-3px);
+}
+
+input[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* Блоки с погодой */
+.weather-block {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.weather-block:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Сообщения об ошибке */
+.error-message {
+    background-color: #ffe6e6;
+    border: 1px solid #ff9999;
+    color: #cc0000;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
